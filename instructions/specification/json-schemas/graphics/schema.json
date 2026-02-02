@@ -1,0 +1,129 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "type": "object",
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "const": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+            "description": "Reference to the JSON-schema for this manifest"
+        },
+        "id": {
+            "type": "string",
+            "description": "The id of the Graphic uniquely identifies it. It is recommended to use a reverse domain name notation. For example: com.my-company.my-lowerthird."
+        },
+        "version": {
+            "type": "string",
+            "description": "The version of the Graphic. The version SHOULD be alphabetically sortable. Examples: ['0', '1', '2'], ['1.0', '1.1', '1.2'], ['2024-07-01_final', '2024-07-01_final_final2']"
+        },
+        "main": {
+            "type": "string",
+            "description": "The main entry point, ie the path to the main javascript file of the Graphic."
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the Graphic"
+        },
+        "description": {
+            "type": "string",
+            "description": "(optional) A longer description of the Graphic"
+        },
+        "author": {
+            "type": "object",
+            "description": "(optional) About the author",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of the author"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "(optional) Email of the author"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "(optional) URL of the author"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "patternProperties": {
+                "^v_.*": {}
+            },
+            "additionalProperties": false
+        },
+        "customActions": {
+            "type": "array",
+            "description": "Custom Actions that can be invoked on the Graphic.",
+            "items": {
+                "$ref": "https://ograf.ebu.io/v1/specification/json-schemas/lib/action.json"
+            }
+        },
+        "supportsRealTime": {
+            "type": "boolean",
+            "description": "Indicates if the Graphic supports real-time rendering"
+        },
+        "supportsNonRealTime": {
+            "type": "boolean",
+            "description": "Indicates if the Graphic supports non-real-time rendering. Note: If true, the Graphic must implement the 'goToTime()' and the 'setActionsSchedule()' methods."
+        },
+        "stepCount": {
+            "type": "number",
+            "description": "The number of steps a Graphic consists of. If the Graphic is simply triggered by a play, then a stop, this is considered a stepCount of 1 (which is the default behavior if left undefined). A value of -1 indicates that a Graphic as a dynamic/unknown number of steps.",
+            "default": 1,
+            "minimum": -1
+        },
+        "schema": {
+            "description": "The schema is used by a Graphic to define the data parameters of the 'update' method.",
+            "type": "object",
+            "$ref": "https://superflytv.github.io/GraphicsDataDefinition/gdd-meta-schema/v1/lib/object.json"
+        },
+        "renderRequirements": {
+            "description": "A list of requirements that this Graphic has for the rendering environment. At least one of the requirements must be met for the graphic to be expected to work.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "resolution": {
+                        "description": "If set, specifies requirements for the resolution of the Renderer.",
+                        "type": "object",
+                        "properties": {
+                            "width": {
+                                "$ref": "https://ograf.ebu.io/v1/specification/json-schemas/lib/constraints/number.json"
+                            },
+                            "height": {
+                                "$ref": "https://ograf.ebu.io/v1/specification/json-schemas/lib/constraints/number.json"
+                            }
+                        }
+                    },
+                    "frameRate": {
+                        "description": "If set, specifies requirements for frame rate of the Renderer. Example: 60 fps",
+                        "$ref": "https://ograf.ebu.io/v1/specification/json-schemas/lib/constraints/number.json"
+                    },
+                    "accessToPublicInternet": {
+                        "description": "If set, specifies requirement on whether the renderer has access to the public internet or not.",
+                        "$ref": "https://ograf.ebu.io/v1/specification/json-schemas/lib/constraints/boolean.json"
+                    }
+
+                },
+                "patternProperties": {
+                    "^v_.*": {}
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": [
+        "$schema",
+        "id",
+        "name",
+        "main",
+        "supportsRealTime",
+        "supportsNonRealTime"
+    ],
+    "patternProperties": {
+        "^v_.*": {}
+    },
+    "additionalProperties": false
+}

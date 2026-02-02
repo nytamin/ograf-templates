@@ -1,0 +1,69 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "slab-material-design",
+  "version": "1.0.0",
+  "name": "Material Design Slab",
+  "description": "A Material Design side panel with card elevation for displaying vertical lists of information.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "slab.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Title",
+        "default": "Top Stories"
+      },
+      "items": {
+        "type": "array",
+        "title": "List Items",
+        "items": {
+          "type": "object",
+          "properties": {
+            "label": { "type": "string" },
+            "value": { "type": "string" }
+          },
+          "required": ["label"]
+        },
+        "default": [
+          { "label": "Breaking News", "value": "Market reaches new high" },
+          { "label": "Technology", "value": "Innovation in AI" },
+          { "label": "Sports", "value": "Championship results" }
+        ]
+      },
+      "position": {
+        "type": "string",
+        "title": "Position",
+        "enum": ["left", "right"],
+        "default": "left"
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Primary Color",
+        "default": "#1976d2"
+      },
+      "surfaceColor": {
+        "type": "string",
+        "title": "Surface Color",
+        "default": "#ffffff"
+      }
+    },
+    "required": ["title", "items"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

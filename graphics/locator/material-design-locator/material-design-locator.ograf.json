@@ -1,0 +1,68 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "locator-material-design",
+  "version": "1.0.0",
+  "name": "Material Design Locator",
+  "description": "A Material Design geographic location indicator with FAB-style badge and elevation.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "locator.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "location": {
+        "type": "string",
+        "title": "Location Name",
+        "default": "London, UK"
+      },
+      "sublocation": {
+        "type": "string",
+        "title": "Sub-location",
+        "default": "Westminster"
+      },
+      "status": {
+        "type": "string",
+        "title": "Status Badge",
+        "enum": ["LIVE", "BREAKING", "RECORDED"],
+        "default": "LIVE"
+      },
+      "showStatus": {
+        "type": "boolean",
+        "title": "Show Status Badge",
+        "default": true
+      },
+      "position": {
+        "type": "string",
+        "title": "Corner Position",
+        "enum": ["top-left", "top-right", "bottom-left", "bottom-right"],
+        "default": "top-left"
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Primary Color",
+        "default": "#1976d2"
+      },
+      "statusColor": {
+        "type": "string",
+        "title": "Status Badge Color",
+        "default": "#d32f2f"
+      }
+    },
+    "required": ["location"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

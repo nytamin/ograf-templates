@@ -1,0 +1,51 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "lower-third-particle",
+  "version": "1.0.0",
+  "name": "Particle Lower Third",
+  "description": "A particle-based lower third where text forms from individual animated particles with explosive in/out effects.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "lower-third.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Title",
+        "default": "Live Event"
+      },
+      "subtitle": {
+        "type": "string",
+        "title": "Subtitle",
+        "default": "Now Broadcasting"
+      },
+      "particleColor": {
+        "type": "string",
+        "title": "Particle Color",
+        "default": "#00d4ff"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#ff006e"
+      }
+    },
+    "required": ["title"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

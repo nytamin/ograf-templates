@@ -1,0 +1,51 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "lower-third-neon",
+  "version": "1.0.0",
+  "name": "Neon Lower Third",
+  "description": "A neon-glowing lower third with vibrant colors, animated glow pulse, and cyberpunk aesthetic.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "lower-third.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Title",
+        "default": "CYBER CITY"
+      },
+      "subtitle": {
+        "type": "string",
+        "title": "Subtitle",
+        "default": "neon.broadcast.live"
+      },
+      "neonColor": {
+        "type": "string",
+        "title": "Neon Color",
+        "default": "#00ff41"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#ff00ff"
+      }
+    },
+    "required": ["title"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

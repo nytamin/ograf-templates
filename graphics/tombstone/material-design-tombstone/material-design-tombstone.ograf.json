@@ -1,0 +1,61 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "tombstone-material-design",
+  "version": "1.0.0",
+  "name": "Material Design Tombstone",
+  "description": "A Material Design fact display card with elevation, centered at the bottom of the screen.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "tombstone.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Title",
+        "default": "Did You Know?"
+      },
+      "fact": {
+        "type": "string",
+        "title": "Fact Text",
+        "default": "Material Design was introduced by Google in 2014"
+      },
+      "category": {
+        "type": "string",
+        "title": "Category",
+        "default": "Technology"
+      },
+      "showCategory": {
+        "type": "boolean",
+        "title": "Show Category",
+        "default": true
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Primary Color",
+        "default": "#1976d2"
+      },
+      "surfaceColor": {
+        "type": "string",
+        "title": "Surface Color",
+        "default": "#ffffff"
+      }
+    },
+    "required": ["fact"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

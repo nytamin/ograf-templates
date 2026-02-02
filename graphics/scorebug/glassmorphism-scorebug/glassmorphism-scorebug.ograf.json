@@ -1,0 +1,71 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "scorebug-glassmorphism",
+  "version": "1.0.0",
+  "name": "Glassmorphism Scorebug",
+  "description": "A glassmorphism-style scoreboard overlay for sports broadcasts with team scores and game clock.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "scorebug.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "homeTeam": {
+        "type": "object",
+        "title": "Home Team",
+        "properties": {
+          "name": { "type": "string", "default": "HOME" },
+          "abbreviation": { "type": "string", "default": "HOM" },
+          "score": { "type": "number", "default": 0 }
+        },
+        "required": ["name", "score"]
+      },
+      "awayTeam": {
+        "type": "object",
+        "title": "Away Team",
+        "properties": {
+          "name": { "type": "string", "default": "AWAY" },
+          "abbreviation": { "type": "string", "default": "AWY" },
+          "score": { "type": "number", "default": 0 }
+        },
+        "required": ["name", "score"]
+      },
+      "clock": {
+        "type": "string",
+        "title": "Game Clock",
+        "default": "00:00"
+      },
+      "period": {
+        "type": "string",
+        "title": "Period/Quarter",
+        "default": "1st"
+      },
+      "showClock": {
+        "type": "boolean",
+        "title": "Show Clock",
+        "default": true
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#4ecdc4"
+      }
+    },
+    "required": ["homeTeam", "awayTeam"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

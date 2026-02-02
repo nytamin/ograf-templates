@@ -1,0 +1,61 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "lower-third-glassmorphism",
+  "version": "1.0.0",
+  "name": "Glassmorphism Lower Third",
+  "description": "A glassmorphism-style lower-third with safe-area awareness and broadcast-friendly legibility.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "lower-third.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name",
+        "default": "Alex Morgan"
+      },
+      "title": {
+        "type": "string",
+        "title": "Title",
+        "default": "Chief Analyst"
+      },
+      "location": {
+        "type": "string",
+        "title": "Location",
+        "default": "New York"
+      },
+      "showLocation": {
+        "type": "boolean",
+        "title": "Show Location",
+        "default": true
+      },
+      "isLive": {
+        "type": "boolean",
+        "title": "Show LIVE Bug",
+        "default": false
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#6cc7ff"
+      }
+    },
+    "required": ["name", "title"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "slab-glassmorphism",
+  "version": "1.0.0",
+  "name": "Glassmorphism Slab",
+  "description": "A glassmorphism-style side panel for displaying vertical lists and rosters.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "slab.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Title",
+        "default": "Starting Lineup"
+      },
+      "subtitle": {
+        "type": "string",
+        "title": "Subtitle",
+        "default": ""
+      },
+      "items": {
+        "type": "array",
+        "title": "List Items",
+        "items": {
+          "type": "object",
+          "properties": {
+            "label": { "type": "string" },
+            "value": { "type": "string" }
+          }
+        },
+        "default": [
+          { "label": "1", "value": "John Smith" },
+          { "label": "2", "value": "Sarah Johnson" },
+          { "label": "3", "value": "Mike Davis" },
+          { "label": "4", "value": "Emily Wilson" },
+          { "label": "5", "value": "Chris Brown" }
+        ]
+      },
+      "position": {
+        "type": "string",
+        "title": "Position",
+        "enum": ["left", "right"],
+        "default": "right"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#9b59b6"
+      }
+    },
+    "required": ["title", "items"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

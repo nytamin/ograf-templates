@@ -1,0 +1,51 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "tombstone-glassmorphism",
+  "version": "1.0.0",
+  "name": "Glassmorphism Tombstone",
+  "description": "A glassmorphism-style tombstone for displaying quick facts and statistics.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "tombstone.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "header": {
+        "type": "string",
+        "title": "Header",
+        "default": "DID YOU KNOW?"
+      },
+      "fact": {
+        "type": "string",
+        "title": "Fact",
+        "default": "This is an interesting fact about the topic"
+      },
+      "source": {
+        "type": "string",
+        "title": "Source",
+        "default": ""
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#f39c12"
+      }
+    },
+    "required": ["fact"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

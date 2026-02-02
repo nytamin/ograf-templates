@@ -1,0 +1,66 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "lower-third-material-design",
+  "version": "1.0.0",
+  "name": "Material Design Lower Third",
+  "description": "A Material Design lower-third with elevation, shadows, and layered surfaces for broadcast.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "lower-third.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name",
+        "default": "Alex Morgan"
+      },
+      "title": {
+        "type": "string",
+        "title": "Title",
+        "default": "Chief Analyst"
+      },
+      "location": {
+        "type": "string",
+        "title": "Location",
+        "default": "New York"
+      },
+      "showLocation": {
+        "type": "boolean",
+        "title": "Show Location",
+        "default": true
+      },
+      "isLive": {
+        "type": "boolean",
+        "title": "Show LIVE Bug",
+        "default": false
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Primary Color",
+        "default": "#3498db"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#e74c3c"
+      }
+    },
+    "required": ["name", "title"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

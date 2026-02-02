@@ -1,0 +1,60 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "ticker-glassmorphism",
+  "version": "1.0.0",
+  "name": "Glassmorphism Ticker",
+  "description": "A glassmorphism-style horizontal scrolling ticker for breaking news and headlines.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "ticker.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "headlines": {
+        "type": "array",
+        "title": "Headlines",
+        "items": {
+          "type": "string"
+        },
+        "default": [
+          "Breaking: Major technology announcement expected today",
+          "Markets close higher for third consecutive day",
+          "Weather alert: Storm system moving through region"
+        ]
+      },
+      "category": {
+        "type": "string",
+        "title": "Category Label",
+        "default": "Breaking News"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#ff6b6b"
+      },
+      "scrollSpeed": {
+        "type": "number",
+        "title": "Scroll Speed (px/s)",
+        "default": 60,
+        "minimum": 20,
+        "maximum": 200
+      }
+    },
+    "required": ["headlines"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

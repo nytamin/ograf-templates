@@ -1,0 +1,68 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "billboard-material-design",
+  "version": "1.0.0",
+  "name": "Material Design Billboard",
+  "description": "A Material Design full-screen billboard with layered surfaces and dramatic elevation for sponsorship and promotional content.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "billboard.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "headline": {
+        "type": "string",
+        "title": "Headline",
+        "default": "Championship Finals"
+      },
+      "subheadline": {
+        "type": "string",
+        "title": "Subheadline",
+        "default": "Live Coverage Starts Soon"
+      },
+      "sponsor": {
+        "type": "string",
+        "title": "Sponsor Text",
+        "default": "Presented by TechCorp"
+      },
+      "showSponsor": {
+        "type": "boolean",
+        "title": "Show Sponsor",
+        "default": true
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Primary Color",
+        "default": "#1976d2"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#ffa726"
+      },
+      "scrimOpacity": {
+        "type": "number",
+        "title": "Background Scrim Opacity",
+        "default": 0.85,
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
+    "required": ["headline"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

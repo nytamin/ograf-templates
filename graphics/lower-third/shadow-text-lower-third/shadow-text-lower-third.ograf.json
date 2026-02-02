@@ -1,0 +1,58 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "lower-third-shadow-text",
+  "version": "1.0.0",
+  "name": "Shadow Text Lower Third",
+  "description": "A minimalist lower third with animated text and shadow effects only - no background surfaces.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "lower-third.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Title",
+        "default": "John Smith"
+      },
+      "subtitle": {
+        "type": "string",
+        "title": "Subtitle",
+        "default": "Chief Technology Officer"
+      },
+      "textColor": {
+        "type": "string",
+        "title": "Text Color",
+        "default": "#ffffff"
+      },
+      "shadowColor": {
+        "type": "string",
+        "title": "Shadow Color",
+        "default": "#000000"
+      },
+      "shadowIntensity": {
+        "type": "number",
+        "title": "Shadow Intensity",
+        "default": 0.8,
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
+    "required": ["title"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

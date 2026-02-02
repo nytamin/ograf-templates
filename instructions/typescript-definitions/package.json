@@ -1,0 +1,29 @@
+{
+  "name": "ograf",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "license": "MIT",
+  "description": "TypeScript definitions for Ograf graphics",
+  "repository": {
+    "url": "https://github.com/ebu/ograf"
+  },
+  "homepage": "https://ograf.ebu.io",
+  "keywords": [
+    "ograf",
+    "types",
+    "typescript",
+    "ebu",
+    "broadcast",
+    "graphics"
+  ],
+  "scripts": {
+    "build": "tsc --build",
+    "watch": "tsc --watch",
+    "generate-types": "node scripts/generate-types.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "json-schema-to-typescript": "^15.0.3"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "locator-glassmorphism",
+  "version": "1.0.0",
+  "name": "Glassmorphism Locator",
+  "description": "A glassmorphism-style geographic locator for broadcast with LIVE indicator support.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "locator.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "location": {
+        "type": "string",
+        "title": "Location",
+        "default": "London"
+      },
+      "sublocation": {
+        "type": "string",
+        "title": "Sublocation",
+        "default": "United Kingdom"
+      },
+      "isLive": {
+        "type": "boolean",
+        "title": "Show LIVE",
+        "default": true
+      },
+      "position": {
+        "type": "string",
+        "title": "Position",
+        "enum": ["top-left", "top-right"],
+        "default": "top-left"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#e74c3c"
+      }
+    },
+    "required": ["location"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "billboard-glassmorphism",
+  "version": "1.0.0",
+  "name": "Glassmorphism Billboard",
+  "description": "A glassmorphism-style full-screen billboard for sponsor recognition and branding.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "billboard.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Title",
+        "default": "Presented By"
+      },
+      "sponsor": {
+        "type": "string",
+        "title": "Sponsor Name",
+        "default": "Sponsor Name"
+      },
+      "tagline": {
+        "type": "string",
+        "title": "Tagline",
+        "default": "Official Partner"
+      },
+      "showTitle": {
+        "type": "boolean",
+        "title": "Show Title",
+        "default": true
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#3498db"
+      }
+    },
+    "required": ["sponsor"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}
