@@ -1,0 +1,51 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "lower-third-fragmented-trapezoid",
+  "version": "1.0.0",
+  "name": "Fragmented Trapezoid Lower Third",
+  "description": "High-impact news/sports lower-third with slanted trapezoid blocks, neon glow line, and staggered character reveals. Features 15-degree slants and sophisticated masking animations.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "lower-third.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name",
+        "default": "Jordan Hayes"
+      },
+      "title": {
+        "type": "string",
+        "title": "Title",
+        "default": "Senior Correspondent"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#ffb800"
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Primary Color",
+        "default": "#1a2a4e"
+      }
+    },
+    "required": ["name", "title"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

@@ -1,3 +1,9 @@
+/**
+ * Flat Design Lower Third Module
+ * Clean, minimalist lower-third graphic with flat colors and subtle animations.
+ * Displays name, title, and optional location information with smooth transitions.
+ */
+
 const DEFAULT_STATE = {
   name: "Alex Morgan",
   title: "Chief Analyst",
@@ -9,8 +15,6 @@ const DEFAULT_STATE = {
 };
 
 const STYLE_TEXT = `
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
-
 :host {
   position: absolute;
   inset: 0;
@@ -198,8 +202,8 @@ class MaterialDesignLowerThird extends HTMLElement {
 
     if (document.fonts && document.fonts.load) {
       await Promise.all([
-        document.fonts.load("900 64px Roboto"),
-        document.fonts.load("500 38px Roboto"),
+        document.fonts.load("900 64px 'Roboto'"),
+        document.fonts.load("500 38px 'Roboto'"),
       ]).catch(() => undefined);
     }
 

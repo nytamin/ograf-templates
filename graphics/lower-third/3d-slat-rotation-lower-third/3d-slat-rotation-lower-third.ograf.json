@@ -1,0 +1,51 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "lower-third-3d-slat-rotation",
+  "version": "1.0.0",
+  "name": "3D Slat Rotation Lower Third",
+  "description": "Modern network identity lower-third with 3D rotating rectangular slats. Features thick physical slabs with shaded edges, matte and glossy finishes, and traveling light flare effects.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "lower-third.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name",
+        "default": "Marcus Williams"
+      },
+      "title": {
+        "type": "string",
+        "title": "Title",
+        "default": "Political Analyst"
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Primary Color (Name Slat)",
+        "default": "#2a3a5c"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color (Title Slat)",
+        "default": "#e0a040"
+      }
+    },
+    "required": ["name", "title"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

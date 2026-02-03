@@ -1,3 +1,9 @@
+/**
+ * Particle Lower Third Module
+ * Dynamic particle system lower-third with animated floating elements and custom color schemes.
+ * Creates immersive background animations coordinated with text reveals.
+ */
+
 const DEFAULT_STATE = {
   title: "Live Event",
   subtitle: "Now Broadcasting",
@@ -6,8 +12,6 @@ const DEFAULT_STATE = {
 };
 
 const STYLE_TEXT = `
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap');
-
 :host {
   position: absolute;
   inset: 0;
@@ -126,8 +130,8 @@ class ParticleLowerThird extends HTMLElement {
 
     if (document.fonts && document.fonts.load) {
       await Promise.all([
-        document.fonts.load("800 80px Poppins"),
-        document.fonts.load("600 28px Poppins"),
+        document.fonts.load("800 80px 'Poppins'"),
+        document.fonts.load("600 28px 'Poppins'"),
       ]).catch(() => undefined);
     }
 

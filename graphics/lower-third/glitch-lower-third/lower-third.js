@@ -1,3 +1,9 @@
+/**
+ * Glitch Lower Third Module
+ * Dynamic glitch-effect lower-third with RGB color shifting and scan-line animations.
+ * Creates high-energy visual with title and subtitle for dramatic reveals.
+ */
+
 const DEFAULT_STATE = {
   title: "Breaking News",
   subtitle: "Live from the field",
@@ -7,8 +13,6 @@ const DEFAULT_STATE = {
 };
 
 const STYLE_TEXT = `
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
-
 :host {
   position: absolute;
   inset: 0;
@@ -177,7 +181,7 @@ class GlitchLowerThird extends HTMLElement {
     this._applyState();
 
     if (document.fonts && document.fonts.load) {
-      await document.fonts.load("700 68px Space Mono").catch(() => undefined);
+      await document.fonts.load("700 68px 'Space Mono'").catch(() => undefined);
     }
 
     return { statusCode: 200 };

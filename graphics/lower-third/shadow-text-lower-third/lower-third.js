@@ -1,3 +1,9 @@
+/**
+ * Shadow Text Lower Third Module
+ * Lower-third graphic featuring text with dynamic shadow effects and color customization.
+ * Supports title and subtitle with independent color and shadow styling.
+ */
+
 const DEFAULT_STATE = {
   title: "John Smith",
   subtitle: "Chief Technology Officer",
@@ -7,8 +13,6 @@ const DEFAULT_STATE = {
 };
 
 const STYLE_TEXT = `
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
-
 :host {
   position: absolute;
   inset: 0;
@@ -146,8 +150,8 @@ class ShadowTextLowerThird extends HTMLElement {
 
     if (document.fonts && document.fonts.load) {
       await Promise.all([
-        document.fonts.load("900 64px Montserrat"),
-        document.fonts.load("700 36px Montserrat"),
+        document.fonts.load("900 64px 'Montserrat'"),
+        document.fonts.load("700 36px 'Montserrat'"),
       ]).catch(() => undefined);
     }
 

@@ -1,3 +1,9 @@
+/**
+ * Neon Lower Third Module
+ * Cyberpunk-inspired neon glowing lower-third with dynamic color effects.
+ * Features pulsing glow animations and futuristic typography styling.
+ */
+
 const DEFAULT_STATE = {
   title: "CYBER CITY",
   subtitle: "neon.broadcast.live",
@@ -6,8 +12,6 @@ const DEFAULT_STATE = {
 };
 
 const STYLE_TEXT = `
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
-
 :host {
   position: absolute;
   inset: 0;
@@ -176,7 +180,7 @@ class NeonLowerThird extends HTMLElement {
     this._applyState();
 
     if (document.fonts && document.fonts.load) {
-      await document.fonts.load("400 72px Audiowide").catch(() => undefined);
+      await document.fonts.load("400 72px 'Audiowide'").catch(() => undefined);
     }
 
     return { statusCode: 200 };

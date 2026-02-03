@@ -1,0 +1,71 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "lower-third-modular",
+  "version": "1.0.0",
+  "name": "Modular Block Lower Third",
+  "description": "A lower-third with independently animated blocks. Supports multiple text blocks and mask blocks that animate sequentially during in-animation and in parallel during out-animation.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "lower-third.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "mainTitle": {
+        "type": "string",
+        "description": "Main text",
+        "default": "Name"
+      },
+      "mainTitleColor": {
+        "type": "string",
+        "description": "Color for main title text (hex format)",
+        "default": "#FFFFFF"
+      },
+      "subtitle": {
+        "type": "string",
+        "description": "Text2",
+        "default": "Title"
+      },
+      "subtitleColor": {
+        "type": "string",
+        "description": "Color for subtitle text (hex format)",
+        "default": "#FFFFFF"
+      },
+      "tertiaryText": {
+        "type": "string",
+        "description": "Optional text for block 3",
+        "default": ""
+      },
+      "tertiaryColor": {
+        "type": "string",
+        "description": "Color for tertiary text (hex format)",
+        "default": "#FFFFFF"
+      },
+      "accentColor": {
+        "type": "string",
+        "description": "Primary accent color for blocks (hex format)",
+        "default": "#00D4FF"
+      },
+      "backgroundColor": {
+        "type": "string",
+        "description": "Background color for blocks (hex format)",
+        "default": "#0A0E27"
+      }
+    },
+    "required": ["mainTitle", "subtitle"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}
